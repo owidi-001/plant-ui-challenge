@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:planty/data/models/plant.dart';
 import 'package:planty/presentation/pages/detail.dart';
 
-// TODO! style
+// TODO! style and add shadow
 
 class PlantCard extends StatelessWidget {
   const PlantCard({super.key, required this.plant});

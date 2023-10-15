@@ -8,6 +8,7 @@ class StartPage extends StatefulWidget {
   State<StartPage> createState() => _StartPageState();
 }
 
+// TODO! make this screen look good
 class _StartPageState extends State<StartPage> {
   final imageCarousel = ["1.webp", "2.jpg", "3.jpg"];
   var selected = 0;
