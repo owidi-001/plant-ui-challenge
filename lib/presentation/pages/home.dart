@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:planty/data/models/plant.dart';
-import 'package:planty/presentation/pages/detail.dart';
 import 'package:planty/presentation/pages/widgets/plant_card.dart';
 import 'package:flutter_masonry_view/flutter_masonry_view.dart';
 
@@ -27,13 +26,15 @@ class HomePage extends StatelessWidget {
                 plant: Plant(
                   name: "Lucky Jade Plant",
                   price: 12.19,
-                  imageUrl: "assets/images/start/1.webp",
+                  imageUrl: "assets/images/start/1.png",
                   bookmarked: false,
                 ),
               ))
     ];
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
+        shadowColor: Colors.transparent,
         leading: GestureDetector(
             child: const Padding(
           padding: EdgeInsets.all(16.0),
