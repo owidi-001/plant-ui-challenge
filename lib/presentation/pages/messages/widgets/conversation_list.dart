@@ -60,7 +60,10 @@ class _ConversationListState extends State<ConversationList> {
                         children: <Widget>[
                           Text(
                             widget.name,
-                            style: const TextStyle(fontSize: 16),
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(
                             height: 6,
