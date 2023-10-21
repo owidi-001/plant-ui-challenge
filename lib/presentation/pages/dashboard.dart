@@ -40,8 +40,6 @@ class _DashboardState extends State<Dashboard> {
               });
             },
             indicatorColor: Theme.of(context).primaryColor,
-            indicatorShape: const CircleBorder(),
-            animationDuration: Duration.zero,
             labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
             destinations: const <NavigationDestination>[
               NavigationDestination(
@@ -51,14 +49,26 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   label: 'Home'),
               NavigationDestination(
+                  selectedIcon: Icon(
+                    CupertinoIcons.chat_bubble_text_fill,
+                    color: Colors.white,
+                  ),
                   icon: Icon(CupertinoIcons.chat_bubble_text,
                       color: Colors.white),
                   label: 'Messages'),
               NavigationDestination(
+                  selectedIcon: Icon(
+                    CupertinoIcons.bag_fill,
+                    color: Colors.white,
+                  ),
                   icon: Icon(CupertinoIcons.bag, color: Colors.white),
                   label: 'Cart'),
               NavigationDestination(
                   icon: Icon(CupertinoIcons.person, color: Colors.white),
+                  selectedIcon: Icon(
+                    CupertinoIcons.person_fill,
+                    color: Colors.white,
+                  ),
                   label: 'settings')
             ]),
       ),

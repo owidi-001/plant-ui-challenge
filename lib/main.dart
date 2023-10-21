@@ -21,8 +21,12 @@ class MyApp extends StatelessWidget {
         outline: const Color(0xffAAAAAA),
       ),
       useMaterial3: true,
-      appBarTheme:
-          const AppBarTheme(backgroundColor: Colors.transparent, elevation: 0),
+      appBarTheme: const AppBarTheme(
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        backgroundColor: Color(0xffD2D2D4),
+        titleTextStyle: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+      ),
     );
 
     return baseTheme.copyWith(

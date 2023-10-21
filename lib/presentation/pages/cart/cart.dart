@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:planty/presentation/pages/cart/widgets/cart_card.dart';
@@ -17,87 +16,82 @@ class Cart extends StatelessWidget {
               useRootNavigator: true,
               useSafeArea: true,
               context: context,
-              builder: (context) => CheckoutDialog());
+              builder: (context) => const CheckoutDialog());
         },
         child: const FaIcon(FontAwesomeIcons.basketShopping),
       ),
-      body: Stack(
-        children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              constraints: BoxConstraints(
-                minHeight: AppBar().preferredSize.height + 50,
+      body: SafeArea(
+        child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            SliverAppBar(
+              elevation: 0,
+              shadowColor: Colors.transparent,
+              title: const Text(
+                "Cart",
               ),
-              // height:
-              child: Image.asset(
-                "assets/images/cart/bg.png",
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-          ),
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: SizedBox(
-              height: MediaQuery.sizeOf(context).height,
-              width: MediaQuery.sizeOf(context).width,
-              child: CustomScrollView(
-                slivers: [
-                  SliverAppBar(
-                    elevation: 0,
-                    shadowColor: Colors.transparent,
-                    centerTitle: true,
-                    title: Text(
-                      "Cart",
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleLarge!
-                          .copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    expandedHeight: AppBar().preferredSize.height + 40,
-                    floating: true,
-                    pinned: false,
-                    snap: true,
-                    flexibleSpace: FlexibleSpaceBar(
-                      background: Stack(
+              expandedHeight: AppBar().preferredSize.height + 50,
+              floating: true,
+              pinned: false,
+              snap: true,
+              actions: [
+                IconButton(
+                    onPressed: () {},
+                    icon: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: FaIcon(
+                        Icons.clear_all,
+                        size: 32,
+                      ),
+                    ))
+              ],
+              flexibleSpace: FlexibleSpaceBar(
+                background: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Container(
-                            decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(.6)),
+                          Text(
+                            '0 Items',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(fontWeight: FontWeight.w800),
                           )
                         ],
                       ),
-                    ),
+                    ],
                   ),
-                  SliverToBoxAdapter(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).scaffoldBackgroundColor,
-                          borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(36),
-                              topRight: Radius.circular(36))),
-                      child: ListView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemCount: 5,
-                          itemBuilder: (context, index) => const CartCard()),
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: SizedBox(
-                      height: AppBar().preferredSize.height + 50,
-                    ),
-                  )
-                ],
+                ),
               ),
             ),
-          ),
-        ],
+            SliverToBoxAdapter(
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16),
+                decoration: BoxDecoration(
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(36),
+                        topRight: Radius.circular(36))),
+                child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: 5,
+                    itemBuilder: (context, index) => const CartCard()),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: AppBar().preferredSize.height + 50,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -180,7 +174,7 @@ class CheckoutDialog extends StatelessWidget {
                           shape: MaterialStatePropertyAll(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(16))),
-                          fixedSize: MaterialStatePropertyAll(
+                          fixedSize: const MaterialStatePropertyAll(
                               Size(double.maxFinite, 60))),
                       onPressed: () {},
                       child: const Text("Place to Order")),
