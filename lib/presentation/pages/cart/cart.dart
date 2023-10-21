@@ -17,95 +17,7 @@ class Cart extends StatelessWidget {
               useRootNavigator: true,
               useSafeArea: true,
               context: context,
-              builder: (context) => Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 32),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Sub total",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium!
-                                  .copyWith(fontWeight: FontWeight.w800),
-                            ),
-                            Text(
-                              "\$62.00",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium!
-                                  .copyWith(fontWeight: FontWeight.w800),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 24,
-                          child: DottedLineDivider(
-                            height: 1,
-                            color: Colors.black.withOpacity(.6),
-                            thickness: 2,
-                            dashWidth: 5,
-                            dashSpace: 3,
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Total",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleLarge!
-                                  .copyWith(fontWeight: FontWeight.w800),
-                            ),
-                            Text(
-                              "\$62.00",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleLarge!
-                                  .copyWith(fontWeight: FontWeight.w800),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 24,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: ElevatedButton(
-                                    style: ButtonStyle(
-                                        backgroundColor:
-                                            MaterialStatePropertyAll(
-                                                Theme.of(context)
-                                                    .colorScheme
-                                                    .primary),
-                                        foregroundColor:
-                                            MaterialStatePropertyAll(
-                                                Theme.of(context)
-                                                    .colorScheme
-                                                    .onPrimary),
-                                        shape: MaterialStatePropertyAll(
-                                            RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(16))),
-                                        fixedSize: MaterialStatePropertyAll(
-                                            Size(double.maxFinite, 60))),
-                                    onPressed: () {},
-                                    child: const Text("Place to Order")),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ));
+              builder: (context) => CheckoutDialog());
         },
         child: const FaIcon(FontAwesomeIcons.basketShopping),
       ),
@@ -185,6 +97,97 @@ class Cart extends StatelessWidget {
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class CheckoutDialog extends StatelessWidget {
+  const CheckoutDialog({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Sub total",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontWeight: FontWeight.w800),
+              ),
+              Text(
+                "\$62.00",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontWeight: FontWeight.w800),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 24,
+            child: DottedLineDivider(
+              height: 1,
+              color: Colors.black.withOpacity(.6),
+              thickness: 2,
+              dashWidth: 5,
+              dashSpace: 3,
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Total",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(fontWeight: FontWeight.w800),
+              ),
+              Text(
+                "\$62.00",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(fontWeight: FontWeight.w800),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Theme.of(context).colorScheme.primary),
+                          foregroundColor: MaterialStatePropertyAll(
+                              Theme.of(context).colorScheme.onPrimary),
+                          shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16))),
+                          fixedSize: MaterialStatePropertyAll(
+                              Size(double.maxFinite, 60))),
+                      onPressed: () {},
+                      child: const Text("Place to Order")),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
