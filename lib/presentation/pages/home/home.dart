@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
           slivers: [
             SliverAppBar(
               title: const Text(
-                "Search products",
+                "Planty",
               ),
               actions: [
                 Container(

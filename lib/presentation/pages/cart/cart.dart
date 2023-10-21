@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:planty/presentation/pages/cart/widgets/cart_card.dart';
 import 'package:planty/presentation/pages/cart/widgets/dotted_divider.dart';
+import 'package:planty/utils/theme.dart';
 
 class Cart extends StatelessWidget {
   const Cart({super.key});
@@ -40,8 +41,7 @@ class Cart extends StatelessWidget {
                     icon: const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: FaIcon(
-                        Icons.clear_all,
-                        size: 32,
+                        FontAwesomeIcons.trash,
                       ),
                     ))
               ],
@@ -132,7 +132,7 @@ class CheckoutDialog extends StatelessWidget {
             height: 24,
             child: DottedLineDivider(
               height: 1,
-              color: Colors.black.withOpacity(.6),
+              color: StaticColors.black.withOpacity(.6),
               thickness: 2,
               dashWidth: 5,
               dashSpace: 3,

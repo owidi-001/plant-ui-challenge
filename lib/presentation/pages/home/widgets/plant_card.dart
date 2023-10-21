@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:planty/data/models/plant.dart';
 import 'package:planty/presentation/pages/home/detail.dart';
+import 'package:planty/utils/theme.dart';
 
 // TODO! style and add shadow
 
@@ -64,13 +65,17 @@ class PlantCard extends StatelessWidget {
                       .titleMedium!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
-                const CircleAvatar(
-                  radius: 18,
-                  backgroundColor: Colors.black,
-                  child: FaIcon(
-                    FontAwesomeIcons.solidHeart,
-                    color: Colors.white,
-                    size: 18,
+                GestureDetector(
+                  onTap: () {},
+                  child: const CircleAvatar(
+                    radius: 16,
+                    backgroundColor: StaticColors.black,
+                    foregroundColor: Colors.white,
+                    child: FaIcon(
+                      FontAwesomeIcons.solidHeart,
+                      size: 16,
+                      color: Colors.white,
+                    ),
                   ),
                 )
               ],

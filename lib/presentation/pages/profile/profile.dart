@@ -79,10 +79,15 @@ class Profile extends StatelessWidget {
                         onTap: () {},
                         dense: true,
                         contentPadding: EdgeInsets.zero,
-                        leading:
-                            const FaIcon(FontAwesomeIcons.rightFromBracket),
-                        title: const Text('Logout'),
-                        trailing: const FaIcon(FontAwesomeIcons.chevronRight),
+                        leading: FaIcon(FontAwesomeIcons.rightFromBracket,
+                            color: Theme.of(context).colorScheme.error),
+                        title: Text(
+                          'Logout',
+                          style: TextStyle(
+                              color: Theme.of(context).colorScheme.error),
+                        ),
+                        trailing: FaIcon(FontAwesomeIcons.chevronRight,
+                            color: Theme.of(context).colorScheme.error),
                       ),
                       const Divider(),
                     ],

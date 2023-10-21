@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:planty/presentation/pages/start.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:planty/utils/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,10 @@ class MyApp extends StatelessWidget {
         elevation: 0,
         shadowColor: Colors.transparent,
         backgroundColor: Color(0xffD2D2D4),
-        titleTextStyle: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+        titleTextStyle: TextStyle(
+            color: StaticColors.black,
+            fontSize: 32,
+            fontWeight: FontWeight.bold),
       ),
     );
 

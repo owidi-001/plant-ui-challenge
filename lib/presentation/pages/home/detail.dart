@@ -113,7 +113,7 @@ class _PlantDetailState extends State<PlantDetail>
                             width: selected == index ? 24 : 8,
                             decoration: BoxDecoration(
                                 color: selected == index
-                                    ? AppColors.darkGreen
+                                    ? StaticColors.darkGreen
                                     : Theme.of(context)
                                         .colorScheme
                                         .primary

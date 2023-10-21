@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:planty/presentation/pages/home/home.dart';
 import 'package:planty/presentation/pages/profile/profile.dart';
+import 'package:planty/utils/theme.dart';
 
 import 'cart/cart.dart';
 import 'messages/messages.dart';
@@ -29,7 +30,7 @@ class _DashboardState extends State<Dashboard> {
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(32), topRight: Radius.circular(32)),
-            color: Colors.black),
+            color: StaticColors.black),
         child: NavigationBar(
             backgroundColor: Colors.transparent,
             elevation: 0,

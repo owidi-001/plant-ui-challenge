@@ -43,10 +43,9 @@ class _StartPageState extends State<StartPage>
           TextButton(
             onPressed: () {
               // Go home
-              Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) => const Dashboard(),
-                  ));
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (context) => const Dashboard(),
+              ));
             },
             child: Text(
               "Skip",
@@ -123,7 +122,7 @@ class _StartPageState extends State<StartPage>
                             width: selected == index ? 24 : 8,
                             decoration: BoxDecoration(
                                 color: selected == index
-                                    ? AppColors.darkGreen
+                                    ? StaticColors.darkGreen
                                     : Theme.of(context)
                                         .colorScheme
                                         .primary
