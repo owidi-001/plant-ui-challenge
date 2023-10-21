@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:planty/presentation/pages/home.dart';
+import 'package:planty/presentation/pages/dashboard.dart';
 import 'package:planty/utils/theme.dart';
 
 class StartPage extends StatefulWidget {
@@ -43,6 +43,10 @@ class _StartPageState extends State<StartPage>
           TextButton(
             onPressed: () {
               // Go home
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const Dashboard(),
+                  ));
             },
             child: Text(
               "Skip",
@@ -176,7 +180,7 @@ class _StartPageState extends State<StartPage>
                       onTap: () {
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
-                            builder: (context) => const HomePage(),
+                            builder: (context) => const Dashboard(),
                           ),
                         );
                       },
